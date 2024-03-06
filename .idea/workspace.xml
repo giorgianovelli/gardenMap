@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3685ccf8-ad6b-4cb5-b31d-bfa8d777af29" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2d9Ql7Iai04SmMXEw6qQSTLzYE8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="imgMap_v2.0" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gardenMap" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/imgMap_v2.0.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.imgMap_v2.0" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3685ccf8-ad6b-4cb5-b31d-bfa8d777af29" name="Default Changelist" comment="" />
+      <created>1709417961267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709417961267</updated>
+      <workItem from="1709417971325" duration="70000" />
+      <workItem from="1709418088984" duration="142000" />
+      <workItem from="1709419535125" duration="1182000" />
+      <workItem from="1709421027668" duration="712000" />
+      <workItem from="1709718543098" duration="359000" />
+      <workItem from="1709721305736" duration="157000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="166" y="80" width="1234" height="792" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1709419630722">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state x="166" y="80" width="1234" height="792" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1023@0.23.1792.1023" timestamp="1709419630722" />
+    <state width="1586" height="278" key="GridCell.Tab.0.bottom" timestamp="1709720830925">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state width="1586" height="278" key="GridCell.Tab.0.bottom/0.23.1792.1023@0.23.1792.1023" timestamp="1709720830925" />
+    <state width="1586" height="278" key="GridCell.Tab.0.center" timestamp="1709720830925">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state width="1586" height="278" key="GridCell.Tab.0.center/0.23.1792.1023@0.23.1792.1023" timestamp="1709720830925" />
+    <state width="1586" height="278" key="GridCell.Tab.0.left" timestamp="1709720830925">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state width="1586" height="278" key="GridCell.Tab.0.left/0.23.1792.1023@0.23.1792.1023" timestamp="1709720830925" />
+    <state width="1586" height="278" key="GridCell.Tab.0.right" timestamp="1709720830925">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state width="1586" height="278" key="GridCell.Tab.0.right/0.23.1792.1023@0.23.1792.1023" timestamp="1709720830925" />
+    <state x="403" y="173" key="SettingsEditor" timestamp="1709420831792">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state x="403" y="173" key="SettingsEditor/0.23.1792.1023@0.23.1792.1023" timestamp="1709420831792" />
+    <state x="826" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1709721307740">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state x="826" y="367" key="com.intellij.ide.util.TipDialog/0.23.1792.1023@0.23.1792.1023" timestamp="1709721307740" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/map$imgMap_v2_0.coverage" NAME="imgMap_v2.0 Coverage Results" MODIFIED="1709718798087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
