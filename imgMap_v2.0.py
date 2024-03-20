@@ -1,8 +1,23 @@
 import numpy as np
 import cv2
+import os
+import random
 
-print(cv2.__version__)
-# Definizione delle dimensioni della mappa e la dimensione delle celle (immagini)
+# print(cv2.__version__)
+
+
+def random_img():
+    folder_path = "img/" # path della cartella che contiene le immagini
+    image_files = [file for file in os.listdir(folder_path) if file.endswith(('.jpg', '.jpeg', '.png'))]
+
+    # Seleziona casualmente un'immagine dalla lista
+    random_image = random.choice(image_files)
+    example_image = cv2.imread(f"{folder_path}" + random_image)
+    example_image = cv2.resize(example_image, cell_size[:2])  # Ridimensiona l'immagine alla dimensione della cella
+
+    return example_image
+
+
 map_width = 4
 map_height = 4
 cell_size = (224, 224)  # Dimensione delle immagini delle celle
@@ -10,15 +25,22 @@ cell_size = (224, 224)  # Dimensione delle immagini delle celle
 # Inizializzazione della mappa come una matrice di immagini vuote
 map_matrix = np.empty((map_height, map_width), dtype=object)
 
-# Carica un'immagine di esempio per riempire la mappa
-example_image = cv2.imread('img/long_oj.jpg')
-example_image = cv2.resize(example_image, cell_size[:2])  # Ridimensiona l'immagine alla dimensione della cella
+# Definizione della griglia di posizioni nella mappa
+grid_positions = [(i, j) for i in range(map_height) for j in range(map_width)]
 
-# Riempie la mappa con l'immagine di esempio
+# todo riempire la mappa con immagini diverse a seconda dello spostamento del robot
+# Simulazione della raccolta delle immagini dal robot
+def add_image(position, img):
+    # Simulazione di un'immagine acquisita dal robot in base alla posizione nella mappa
+    return np.random.randint(0, 256, (cell_size[1], cell_size[0], 3), dtype=np.uint8)
+
+
+# Riempie la mappa con immagini casuali
 for i in range(map_height):
     for j in range(map_width):
-        map_matrix[i, j] = example_image  # Ogni cella contiene l'immagine di esempio
+        map_matrix[i, j] = random_img()  # Ogni cella contiene l'immagine di esempio
 
+#Per visualizzare:
 # Crea una grande immagine che rappresenta l'intera mappa
 map_image = np.zeros((map_height * cell_size[0], map_width * cell_size[1], 3), dtype=np.uint8)
 
