@@ -7,7 +7,7 @@ import random
 
 
 def random_img():
-    folder_path = "img/"  # path della cartella che contiene le immagini
+    folder_path = "../img/"  # path della cartella che contiene le immagini
     image_files = [file for file in os.listdir(folder_path) if file.endswith(('.jpg', '.jpeg', '.png'))]
 
     # Seleziona casualmente un'immagine dalla lista

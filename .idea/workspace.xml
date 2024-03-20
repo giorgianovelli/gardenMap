@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3685ccf8-ad6b-4cb5-b31d-bfa8d777af29" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgMap_v3.0.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/map.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgMap_v2.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/imgMap_v2.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VL_simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/prev/VL_simulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgMap_v1.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/prev/imgMap_v1.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgMap_v2.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/prev/imgMap_v2.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/occupancyMap.py" beforeDir="false" afterPath="$PROJECT_DIR$/prev/occupancyMap.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +18,13 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="gardenMap" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,17 +40,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/prev" />
+      <recent name="$PROJECT_DIR$/img" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.imgMap_v3.0">
     <configuration name="imgMap_v2.0" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gardenMap" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -51,7 +65,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/imgMap_v2.0.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/prev/imgMap_v2.0.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="imgMap_v3.0" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gardenMap" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/imgMap_v3.0.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -62,6 +98,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.imgMap_v3.0" />
         <item itemvalue="Python.imgMap_v2.0" />
       </list>
     </recent_temporary>
@@ -82,7 +119,7 @@
       <workItem from="1709421027668" duration="712000" />
       <workItem from="1709718543098" duration="359000" />
       <workItem from="1709721305736" duration="157000" />
-      <workItem from="1710085928814" duration="5471000" />
+      <workItem from="1710085928814" duration="9672000" />
     </task>
     <servers />
   </component>
@@ -94,36 +131,57 @@
       <screen x="0" y="23" width="1792" height="1023" />
     </state>
     <state x="166" y="80" width="1234" height="792" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1023@0.23.1792.1023" timestamp="1709419630722" />
+    <state x="644" y="344" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1710932016122">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state x="644" y="344" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1792.1023@0.23.1792.1023" timestamp="1710932016122" />
     <state x="336" y="136" width="1236" height="795" key="CommitChangelistDialog2" timestamp="1710085977442">
       <screen x="0" y="23" width="1792" height="1023" />
     </state>
     <state x="336" y="136" width="1236" height="795" key="CommitChangelistDialog2/0.23.1792.1023@0.23.1792.1023" timestamp="1710085977442" />
-    <state width="1441" height="278" key="GridCell.Tab.0.bottom" timestamp="1710931661846">
+    <state width="1572" height="284" key="GridCell.Tab.0.bottom" timestamp="1710936593708">
       <screen x="0" y="23" width="1792" height="1023" />
     </state>
-    <state width="1441" height="278" key="GridCell.Tab.0.bottom/0.23.1792.1023@0.23.1792.1023" timestamp="1710931661846" />
-    <state width="1441" height="278" key="GridCell.Tab.0.center" timestamp="1710931661845">
+    <state width="1572" height="284" key="GridCell.Tab.0.bottom/0.23.1792.1023@0.23.1792.1023" timestamp="1710936593708" />
+    <state width="1572" height="284" key="GridCell.Tab.0.center" timestamp="1710936593708">
       <screen x="0" y="23" width="1792" height="1023" />
     </state>
-    <state width="1441" height="278" key="GridCell.Tab.0.center/0.23.1792.1023@0.23.1792.1023" timestamp="1710931661845" />
-    <state width="1441" height="278" key="GridCell.Tab.0.left" timestamp="1710931661845">
+    <state width="1572" height="284" key="GridCell.Tab.0.center/0.23.1792.1023@0.23.1792.1023" timestamp="1710936593708" />
+    <state width="1572" height="284" key="GridCell.Tab.0.left" timestamp="1710936593707">
       <screen x="0" y="23" width="1792" height="1023" />
     </state>
-    <state width="1441" height="278" key="GridCell.Tab.0.left/0.23.1792.1023@0.23.1792.1023" timestamp="1710931661845" />
-    <state width="1441" height="278" key="GridCell.Tab.0.right" timestamp="1710931661846">
+    <state width="1572" height="284" key="GridCell.Tab.0.left/0.23.1792.1023@0.23.1792.1023" timestamp="1710936593707" />
+    <state width="1572" height="284" key="GridCell.Tab.0.right" timestamp="1710936593708">
       <screen x="0" y="23" width="1792" height="1023" />
     </state>
-    <state width="1441" height="278" key="GridCell.Tab.0.right/0.23.1792.1023@0.23.1792.1023" timestamp="1710931661846" />
-    <state x="403" y="173" key="SettingsEditor" timestamp="1709420831792">
+    <state width="1572" height="284" key="GridCell.Tab.0.right/0.23.1792.1023@0.23.1792.1023" timestamp="1710936593708" />
+    <state width="1441" height="343" key="GridCell.Tab.1.bottom" timestamp="1710933446409">
       <screen x="0" y="23" width="1792" height="1023" />
     </state>
-    <state x="403" y="173" key="SettingsEditor/0.23.1792.1023@0.23.1792.1023" timestamp="1709420831792" />
+    <state width="1441" height="343" key="GridCell.Tab.1.bottom/0.23.1792.1023@0.23.1792.1023" timestamp="1710933446409" />
+    <state width="1441" height="343" key="GridCell.Tab.1.center" timestamp="1710933446409">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state width="1441" height="343" key="GridCell.Tab.1.center/0.23.1792.1023@0.23.1792.1023" timestamp="1710933446409" />
+    <state width="1441" height="343" key="GridCell.Tab.1.left" timestamp="1710933446409">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state width="1441" height="343" key="GridCell.Tab.1.left/0.23.1792.1023@0.23.1792.1023" timestamp="1710933446409" />
+    <state width="1441" height="343" key="GridCell.Tab.1.right" timestamp="1710933446409">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state width="1441" height="343" key="GridCell.Tab.1.right/0.23.1792.1023@0.23.1792.1023" timestamp="1710933446409" />
+    <state x="403" y="173" key="SettingsEditor" timestamp="1710932612301">
+      <screen x="0" y="23" width="1792" height="1023" />
+    </state>
+    <state x="403" y="173" key="SettingsEditor/0.23.1792.1023@0.23.1792.1023" timestamp="1710932612301" />
     <state x="826" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1710085930108">
       <screen x="0" y="23" width="1792" height="1023" />
     </state>
     <state x="826" y="367" key="com.intellij.ide.util.TipDialog/0.23.1792.1023@0.23.1792.1023" timestamp="1710085930108" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gardenMap$imgMap_v3_0.coverage" NAME="imgMap_v3.0 Coverage Results" MODIFIED="1710936593700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gardenMap$imgMap_v2_0.coverage" NAME="imgMap_v2.0 Coverage Results" MODIFIED="1710931661839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/map$imgMap_v2_0.coverage" NAME="imgMap_v2.0 Coverage Results" MODIFIED="1709718798087" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
