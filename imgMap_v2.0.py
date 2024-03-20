@@ -7,7 +7,7 @@ import random
 
 
 def random_img():
-    folder_path = "img/" # path della cartella che contiene le immagini
+    folder_path = "img/"  # path della cartella che contiene le immagini
     image_files = [file for file in os.listdir(folder_path) if file.endswith(('.jpg', '.jpeg', '.png'))]
 
     # Seleziona casualmente un'immagine dalla lista
@@ -26,19 +26,20 @@ cell_size = (224, 224)  # Dimensione delle immagini delle celle
 map_matrix = np.empty((map_height, map_width), dtype=object)
 
 # Definizione della griglia di posizioni nella mappa
-grid_positions = [(i, j) for i in range(map_height) for j in range(map_width)]
+#grid_positions = [(i, j) for i in range(map_height) for j in range(map_width)]
 
-# todo riempire la mappa con immagini diverse a seconda dello spostamento del robot
+
 # Simulazione della raccolta delle immagini dal robot
 def add_image(position, img):
     # Simulazione di un'immagine acquisita dal robot in base alla posizione nella mappa
-    return np.random.randint(0, 256, (cell_size[1], cell_size[0], 3), dtype=np.uint8)
+    x,y = position
+    map_matrix[x, y] = img
 
 
-# Riempie la mappa con immagini casuali
 for i in range(map_height):
     for j in range(map_width):
-        map_matrix[i, j] = random_img()  # Ogni cella contiene l'immagine di esempio
+        add_image([i, j], random_img())
+
 
 #Per visualizzare:
 # Crea una grande immagine che rappresenta l'intera mappa
