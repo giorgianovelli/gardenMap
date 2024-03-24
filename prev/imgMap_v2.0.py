@@ -3,9 +3,8 @@ import cv2
 import os
 import random
 
-# print(cv2.__version__)
 
-
+# Seleziona casualmente un'immagine dalla cartella
 def random_img():
     folder_path = "../img/"  # path della cartella che contiene le immagini
     image_files = [file for file in os.listdir(folder_path) if file.endswith(('.jpg', '.jpeg', '.png'))]

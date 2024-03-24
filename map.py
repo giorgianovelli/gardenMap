@@ -3,29 +3,36 @@ import cv2
 
 import constants as c
 
+
 class Map:
     def __init__(self, width, height, cell_size):
         self.width = width
         self.height = height
         self.cell_size = cell_size
         self.grid = np.empty((height, width), dtype=object)  # Matrice per memorizzare le immagini
+        self.tags = np.empty((height, width), dtype=object)
 
-    def update_cell(self, x, y, image):
-        # Aggiorna la cella della mappa con l'immagine acquisita dal robot
+    # Aggiorna la cella della mappa con l'immagine acquisita dal robot
+    def update_map(self, x, y, image, tag=None):
         self.grid[y][x] = image
+        self.tags[y][x] = {tag}
 
-    #mostra la singola immagine per cella
+    # Mostra la singola immagine per cella
     def display_images(self):
         for y in range(self.height):
             for x in range(self.width):
                 image = self.grid[y][x]
+                tag_info = self.tags[y][x]
+                print(tag_info)
                 if image is not None:
                     cv2.imshow(f'Cella ({x}, {y})', image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
+
+
+    # Visualizza l'intera mappa con le immagini, da sistemare se le celle sono vuote
     def display_map(self):
-        # Visualizza l'intera mappa con le immagini, da sistemare se le celle sono vuote
         # Crea una grande immagine che rappresenta l'intera mappa
         map_image = np.zeros((c.MAP_HEIGHT * c.CELL_SIZE[0], c.MAP_WIDTH * c.CELL_SIZE[1], 3), dtype=np.uint8)
 
