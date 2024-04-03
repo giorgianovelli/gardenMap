@@ -17,7 +17,8 @@ def random_img():
 
 
 if __name__ == "__main__":
-    #simulazione
+
+    # simulazione
     garden_map = map.Map(c.MAP_WIDTH, c.MAP_HEIGHT, c.CELL_SIZE)
 
     for i in range(c.MAP_HEIGHT):
@@ -25,19 +26,20 @@ if __name__ == "__main__":
             tag_info = f'Timestamp: {(datetime.now()).strftime("%Y-%m-%d_%H-%M")}'
             garden_map.update_map(i, j, random_img(), tag_info)
 
-
     # Visualizza l'intera mappa con le immagini
     garden_map.display_map()
 
 
+    
     """
+
     tag_info = f'Timestamp: {(datetime.now()).strftime("%Y-%m-%d_%H-%M")}'
     garden_map.update_map(0, 0, random_img(),tag_info)
     garden_map.update_map(1, 1, random_img(),tag_info)
     garden_map.update_map(2, 2, random_img(),tag_info)
-    garden_map.display_images()
-    """
+    garden_map.display_map()
 
+    """
 
 
 

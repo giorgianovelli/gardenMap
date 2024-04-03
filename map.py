@@ -1,8 +1,6 @@
 import numpy as np
 import cv2
 
-import constants as c
-
 
 class Map:
     def __init__(self, width, height, cell_size):
@@ -10,41 +8,48 @@ class Map:
         self.height = height
         self.cell_size = cell_size
         self.grid = np.empty((height, width), dtype=object)  # Matrice per memorizzare le immagini
-        self.tags = np.empty((height, width), dtype=object)
+        self.tags = np.empty((height, width), dtype=object)  # Matrice per memorizzare info aggiuntive
 
     # Aggiorna la cella della mappa con l'immagine acquisita dal robot
     def update_map(self, x, y, image, tag=None):
-        self.grid[y][x] = image
-        self.tags[y][x] = {tag}
+        self.grid[x][y] = image
+        self.tags[x][y] = {tag}
+
+    # aggiungere metodo per ingrandire matrice
 
     # Mostra la singola immagine per cella
     def display_images(self):
-        for y in range(self.height):
-            for x in range(self.width):
-                image = self.grid[y][x]
-                tag_info = self.tags[y][x]
+        for x in range(self.width):
+            for y in range(self.height):
+                image = self.grid[x][y]
+                tag_info = self.tags[x][y]
                 print(tag_info)
                 if image is not None:
                     cv2.imshow(f'Cella ({x}, {y})', image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 
-
-
-    # Visualizza l'intera mappa con le immagini, da sistemare se le celle sono vuote
+    # Visualizza l'intera mappa con le immagini
     def display_map(self):
-        # Crea una grande immagine che rappresenta l'intera mappa
-        map_image = np.zeros((c.MAP_HEIGHT * c.CELL_SIZE[0], c.MAP_WIDTH * c.CELL_SIZE[1], 3), dtype=np.uint8)
-
-        # Riempie la grande immagine con le immagini delle celle
+        # controlla se nella matrice ci sono celle vuote senza immagini
         for i in range(self.height):
             for j in range(self.width):
-                map_image[i * self.cell_size[0]: (i + 1) * self.cell_size[0], j * self.cell_size[1]: (j + 1) * self.cell_size[1]] = self.grid[i, j]
+                if self.grid[i, j] is None:
+                    self.grid[i, j] = np.zeros((self.cell_size[0], self.cell_size[1], 3), dtype=np.uint8)  # Immagine nera
 
-        # Visualizza l'intera mappa
-        cv2.imshow('Map', map_image)
+        # Concatena le immagini lungo l'asse delle colonne per creare righe
+        rows = [np.concatenate(self.grid[i, :], axis=1) for i in range(self.width)]
+
+        # Concatena le righe per creare l'intera mappa
+        map_image = np.concatenate(rows, axis=0)
+
+        # Visualizza l'immagine della mappa
+        cv2.imshow("Mappa SLAM", map_image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+
+
+
 
 
 
