@@ -14,19 +14,6 @@ def random_img():
 
     return example_image
 
-def ingrandisci_matrice(matrice): # questo metoo può essere aggiunto nella classe per definire la mappa
-    righe, colonne = len(matrice), len(matrice[0])
-    print(righe, colonne)
-    nuove_righe = 4 + righe  # 120+righe
-    nuove_colonne = 4 + colonne  # 120+colonne
-
-    nuova_matrice = np.zeros((nuove_righe, nuove_colonne), dtype=np.dtype('U1'))
-    for i in range(righe):
-        for j in range(colonne):
-            nuova_matrice[i + 2][j + 2] = matrice[i][j]  # i+60,j+60
-
-    return nuova_matrice
-
 
 
 
@@ -79,13 +66,13 @@ def processData(data): # converte direzione e misura
 if __name__ == "__main__":
 
     # inizializza la posizione del robot al centro
-    i = 0
-    j = 0
+    pos_x = 2  # i
+    pos_y = 2  # j
 
-    cont = 3
+    cont = 4  # contatore per evitare ciclo infinito
     matrix_map = map.Map(c.MAP_WIDTH, c.MAP_HEIGHT, c.CELL_SIZE)
 
-    while (cont > 0):
+    while cont > 0:
         start_time = time.time()  # Memorizza il tempo di inizio
         time.sleep(2)  # Attende un secondo
         timer = time.time()  # Memorizza il tempo di fine
@@ -101,34 +88,49 @@ if __name__ == "__main__":
                 sens = byte_utile[0]  # direzione
                 measure = byte_utile[1]  # distanza
 
-                if i >= len(matrix_map.grid) - 3:
+                if byte_utile[0] == 2:  # front
+                    pos_y -= 1
+                    matrix_map.update_map(pos_x,pos_y,random_img())
+
+                elif byte_utile[0] == 4:  # back
+                    pos_y += 1
+                    matrix_map.update_map(pos_x, pos_y, random_img())
+
+                elif byte_utile[0] == 1:  # left
+                    pos_x -= 1
+                    matrix_map.update_map(pos_x, pos_y, random_img())
+
+                elif byte_utile[0] == 3:  # right
+                    pos_x += 1  # passo 1 da sostituire con measure
+                    matrix_map.update_map(pos_x, pos_y, random_img())
+
+                if pos_x <= (len(matrix_map.grid) - (len(matrix_map.grid)-1)) or pos_x >= (len(matrix_map.grid) - 2):
                     print("oltre indice 1")
+                    print(pos_x, pos_y)
+                    print(len(matrix_map.grid), len(matrix_map.grid[0]))
+                    print("ingrandimento")
+                    matrix_map.ingrandisci_matrice()
+                    print(len(matrix_map.grid), len(matrix_map.grid[0]))
+                    pos_x += 2
+                    pos_y += 2
+                    print(pos_x, pos_y)
 
-                if i == 2:
+                if pos_y <= (len(matrix_map.grid[0]) - (len(matrix_map.grid[0])-1)) or pos_y >= (len(matrix_map.grid[0]) - 2):
                     print("oltre indice 2")
-
-                if j >= len(matrix_map.grid) - 3:
-                    print("oltre indice 3")
-
-                if j == 2:
-                    print("oltre indice 4")
-
-                if (byte_utile[0] == 2):  # front
-                    i -= 1
-                    matrix_map.update_map(i,j,random_img())
-
-                elif (byte_utile[0] == 4):  # back
-                    i += 1
-                    matrix_map.update_map(i, j, random_img())
-
-                elif (byte_utile[0] == 1):  # left
-                    j -= 1
-                    matrix_map.update_map(i, j, random_img())
-
-                elif (byte_utile[0] == 3):  # right
-                    j += 1  # passo 1 da sostituire con measure
-                    matrix_map.update_map(i, j, random_img())
-
-        matrix_map.display_map()
+                    print(pos_x, pos_y)
+                    print(len(matrix_map.grid), len(matrix_map.grid[0]))
+                    print("ingrandimento")
+                    matrix_map.ingrandisci_matrice()
+                    print(len(matrix_map.grid), len(matrix_map.grid[0]))
+                    pos_x += 2
+                    pos_y += 2
+                    print(pos_x, pos_y)
 
     matrix_map.display_map()
+
+
+
+
+
+
+

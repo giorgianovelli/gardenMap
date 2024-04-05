@@ -13,9 +13,22 @@ class Map:
     # Aggiorna la cella della mappa con l'immagine acquisita dal robot
     def update_map(self, x, y, image, tag=None):
         self.grid[x][y] = image
-        self.tags[x][y] = {tag}
+        # self.tags[x][y] = {tag}
 
-    # aggiungere metodo per ingrandire matrice
+
+    # todo se aggiungo anche altre info, va ingrandita anche la tabella dei tag
+    def ingrandisci_matrice(self): # test su una occupancy map
+        righe, colonne = len(self.grid), len(self.grid[0])
+        self.width = 4 + righe  # 120+righe
+        self.height = 4 + colonne  # 120+colonne
+
+        nuova_matrice = np.empty((self.width, self.height), dtype=object)
+        for i in range(righe):
+            for j in range(colonne):
+                nuova_matrice[i + 2][j + 2] = self.grid[i][j]  # i+60,j+60
+
+        self.grid = nuova_matrice
+
 
     # Mostra la singola immagine per cella
     def display_images(self):
@@ -36,7 +49,7 @@ class Map:
             for j in range(self.width):
                 if self.grid[i, j] is None:
                     self.grid[i, j] = np.zeros((self.cell_size[0], self.cell_size[1], 3), dtype=np.uint8)  # Immagine nera
-
+        """
         # Concatena le immagini lungo l'asse delle colonne per creare righe
         rows = [np.concatenate(self.grid[i, :], axis=1) for i in range(self.width)]
 
@@ -45,6 +58,19 @@ class Map:
 
         # Visualizza l'immagine della mappa
         cv2.imshow("Mappa SLAM", map_image)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        """
+        # Crea una grande immagine che rappresenta l'intera mappa
+        map_image = np.zeros((self.height * self.cell_size[0], self.width * self.cell_size[1], 3), dtype=np.uint8)
+
+        # Riempie la grande immagine con le immagini delle celle
+        for i in range(self.height):
+            for j in range(self.width):
+                map_image[i * self.cell_size[0]: (i + 1) * self.cell_size[0], j * self.cell_size[1]: (j + 1) * self.cell_size[1]] = self.grid[i, j]
+
+        # Visualizza l'intera mappa
+        cv2.imshow('Map', map_image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 

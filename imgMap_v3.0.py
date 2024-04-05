@@ -29,8 +29,6 @@ if __name__ == "__main__":
     # Visualizza l'intera mappa con le immagini
     garden_map.display_map()
 
-
-    
     """
 
     tag_info = f'Timestamp: {(datetime.now()).strftime("%Y-%m-%d_%H-%M")}'
