@@ -53,3 +53,17 @@ for i in range(map_height):
 cv2.imshow('Map', map_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+"""
+# Concatena le immagini lungo l'asse delle colonne per creare righe
+rows = [np.concatenate(self.grid[i, :], axis=1) for i in range(self.width)]
+
+# Concatena le righe per creare l'intera mappa
+map_image = np.concatenate(rows, axis=0)
+
+# Visualizza l'immagine della mappa
+cv2.imshow("Mappa", map_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+"""
+

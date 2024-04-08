@@ -6,7 +6,8 @@ import map
 import cv2
 import os
 
-def random_img():
+
+def random_img():  # restituisce un'immagine random
     image_files = [file for file in os.listdir(c.FOLDER_PATH) if file.endswith(('.jpg', '.jpeg', '.png'))]
     random_image = random.choice(image_files)
     example_image = cv2.imread(f"{c.FOLDER_PATH}" + random_image)
@@ -15,12 +16,7 @@ def random_img():
     return example_image
 
 
-
-
-# --------------------------------------------------------------------------
-
-
-def streamin(): # generatore dati
+def streamin():  # generatore dati
     vettore = [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0]
     a = 0
     b = 0
@@ -37,21 +33,18 @@ def streamin(): # generatore dati
 
     for i in range(16, 24):
         c += vettore[39 - i] * 2 ** (i - 16)
-    #print(vettore)
+
     return a, b, c
 
 
-#print(streamin())
-
-
-def processData(data): # converte direzione e misura
+def processData(data):  # converte direzione e misura
     sens = 0
 
     # rimuove il prefisso "0b" e assicura che la rappresentazione
     # abbia una lunghezza di 8 bit riempiendo con zeri a sinistra
     bit_representation = bin(data)[2:].zfill(8)
     add_bit = bit_representation[0:2].zfill(8) # due bit per direzione
-    measure_bit = bit_representation[2:].zfill(8) # sei bit per misurazione
+    measure_bit = bit_representation[2:].zfill(8)  # sei bit per misurazione
 
     if (int(add_bit, 2) == 0): sens = 1  # left
     if (int(add_bit, 2) == 1): sens = 2  # front
@@ -66,25 +59,27 @@ def processData(data): # converte direzione e misura
 if __name__ == "__main__":
 
     # inizializza la posizione del robot al centro
-    pos_x = 2  # i
-    pos_y = 2  # j
+    # todo da calcorare in modo automatico date le dimensioni della matrice
+    pos_x = 2
+    pos_y = 2
 
-    cont = 4  # contatore per evitare ciclo infinito
     matrix_map = map.Map(c.MAP_WIDTH, c.MAP_HEIGHT, c.CELL_SIZE)
 
-    while cont > 0:
-        start_time = time.time()  # Memorizza il tempo di inizio
-        time.sleep(2)  # Attende un secondo
-        timer = time.time()  # Memorizza il tempo di fine
-        cont -= 1
+    cont = 10  # contatore per evitare ciclo infinito
 
-        while (timer >= 2):
+    while cont > 0:  # sostituire cont>0 con True per ciclo infinito
+        start_time = time.time()
+        time.sleep(2)
+        timer = time.time()
+        cont -= 1  # commentare per ciclo infinito
+
+        while timer >= 2:
             timer = 0
             pacchetto_dati = streamin()
 
-            if (pacchetto_dati[0] == 255 and pacchetto_dati[2] == 254):
+            if pacchetto_dati[0] == 255 and pacchetto_dati[2] == 254:
                 print(processData(pacchetto_dati[1]))
-                byte_utile = processData(pacchetto_dati[1])  # Esegue la funzione e memorizza il risultato
+                byte_utile = processData(pacchetto_dati[1])
                 sens = byte_utile[0]  # direzione
                 measure = byte_utile[1]  # distanza
 
@@ -104,6 +99,7 @@ if __name__ == "__main__":
                     pos_x += 1  # passo 1 da sostituire con measure
                     matrix_map.update_map(pos_x, pos_y, random_img())
 
+                # condizioni per allargare la matrice
                 if pos_x <= (len(matrix_map.grid) - (len(matrix_map.grid)-1)) or pos_x >= (len(matrix_map.grid) - 2):
                     print("oltre indice 1")
                     print(pos_x, pos_y)
@@ -124,7 +120,10 @@ if __name__ == "__main__":
                     print(len(matrix_map.grid), len(matrix_map.grid[0]))
                     pos_x += 2
                     pos_y += 2
-                    print(pos_x, pos_y)
+
+            print(pos_x, pos_y)
+
+        matrix_map.display_grid()
 
     matrix_map.display_map()
 
